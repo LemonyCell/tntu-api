@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="96eed9bf-3c41-46e9-aabd-98b458cb2691" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1nJ4tmT1LmDTubGkBdALMLVOWeN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.4" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.21" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Node.js.node +brouser">
+    <configuration name="node +brouser" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
+        <browser name="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" start="true" url="http://localhost:3000" />
+      </EXTENSION>
+      <method v="2" />
+    </configuration>
+    <configuration name="node console" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.node +brouser" />
+      <item itemvalue="Node.js.node console" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96eed9bf-3c41-46e9-aabd-98b458cb2691" name="Default Changelist" comment="" />
+      <created>1611095087393</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611095087393</updated>
+      <workItem from="1611095092355" duration="5724000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
