@@ -49,12 +49,12 @@ function getSessionKey(html){
     return sessionKey;
 }
 
-function parseCookies(cookies){
+function parseCookies(cookies){ // todo 1 - cookies
     const id = "ATutorID";
     const row = "row-12756";
 }
 
-async function login(login, hash, cookies){
+async function login(login, hash, cookies){ // todo 2 - login
 
 }
 
