@@ -3,6 +3,7 @@
 
 module.exports.RSAKey = RSAKey;
 module.exports.hex2b64 = hex2b64;
+module.exports.RSASetPublic = RSASetPublic;
 
 //----------------------------------------
 
