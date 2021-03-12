@@ -1,6 +1,7 @@
 const crypto_merged = require("./external/crypto_merged");
 const http = require("http");
 const fetch = require('node-fetch');
+const FormData = require('form-data');
 
 // todo: move to config
 const LOGIN = "";
@@ -22,11 +23,15 @@ async function foo(){
         "credentials": "include"
     })
         .catch(error => console.log("fetch error", error));
-    console.log("cookies: ", loginPage.headers.get('set-cookie'));
+    const cookies = loginPage.headers.get('set-cookie')
+    console.log("cookies: ", cookies);
     const html = await loginPage.text();
     const key = getSessionKey(html)
     const hash = encrypt_password(PASSWORD, key);
     console.log("hash: ", hash);
+    // login
+    //await login(LOGIN, hash, cookies);
+    // logout
 }
 
 function encrypt_password(pass, sessionKey) {
@@ -55,6 +60,34 @@ function parseCookies(cookies){ // todo 1 - cookies
 }
 
 async function login(login, hash, cookies){ // todo 2 - login
+    // todo set cookies from param
+    const myHeaders = {
+        "content-type": "application/x-www-form-urlencoded",
+        //"Cookie": "row-12756=1551019; ATutorID=jevijgk5mjqtqpm99qmdij0gs8"
+        "Cookie": cookies
+    };
+
+    const form = new FormData();
+    form.append("form_login_action", "true");
+    form.append("form_course_id", "0");
+    form.append("form_password_hidden", hash);
+    form.append("form_hash_password", "");
+    form.append("form_password_ldap", "");
+    form.append("form_login", login);
+    form.append("form_password", "");
+    form.append("submit", "Вхід");
+
+    const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: form,
+        redirect: 'follow'
+    };
+
+    await fetch("https://dl.tntu.edu.ua/login.php", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
 
 }
 
