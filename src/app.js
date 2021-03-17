@@ -7,14 +7,17 @@ const FormData = require('form-data');
 const LOGIN = "";
 const PASSWORD = "";
 
+/*
 http.createServer(async function(request,response){
 
     await foo();
-    response.end("Hello NodeJS! | hash: " + encrypt_password("123", "sdgngfhnfgb"));
+    response.end("Hello NodeJS! ");
 
 }).listen(3000, "127.0.0.1",function(){
     console.log("Server started listening requests from port: 3000");
 });
+*/
+
 
 async function foo(){
     const loginPage = await fetch("https://dl.tntu.edu.ua/login.php", {
@@ -23,13 +26,14 @@ async function foo(){
         "credentials": "include"
     })
         .catch(error => console.log("fetch error", error));
-    const cookies = loginPage.headers.get('set-cookie')
+    const cookies = loginPage.headers.raw()['set-cookie'];
     console.log("cookies: ", cookies);
     const html = await loginPage.text();
     const key = getSessionKey(html)
     const hash = encrypt_password(PASSWORD, key);
     console.log("hash: ", hash);
     // login
+    const setCookies = parseCookies(cookies);
     //await login(LOGIN, hash, cookies);
     // logout
 }
@@ -54,16 +58,15 @@ function getSessionKey(html){
     return sessionKey;
 }
 
-function parseCookies(cookies){ // todo 1 - cookies
-    const id = "ATutorID";
-    const row = "row-12756";
+function parseCookies(cookies){
+    const ATutorId = cookies[0].split(' ')[0];
+    const row = cookies[1].split(' ')[0];
+    return ATutorId + row;
 }
 
 async function login(login, hash, cookies){ // todo 2 - login
-    // todo set cookies from param
     const myHeaders = {
-        "content-type": "application/x-www-form-urlencoded",
-        //"Cookie": "row-12756=1551019; ATutorID=jevijgk5mjqtqpm99qmdij0gs8"
+        //"content-type": "application/x-www-form-urlencoded",
         "Cookie": cookies
     };
 
@@ -88,6 +91,8 @@ async function login(login, hash, cookies){ // todo 2 - login
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-
 }
 
+foo();
+//const hash = encrypt_password(PASSWORD, "6eaf81e1d9123d6fd3d858782fc482de");
+//console.log("hash", hash);
